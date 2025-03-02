@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruben Luz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .cardo-regular {
+      font-family: "Cardo", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .cardo-bold {
+      font-family: "Cardo", serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 28px;
+      top: 20px;
+      position: absolute;
+      right: 40px;
+      z-index: 999;
+    }
+
+    body {
+      opacity: 0.8
+    }
+
+    .overlay {
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      opacity: 0.4;
+      z-index: 8;
+    }
+
+    .links {
+      position: absolute;
+      gap: 20px;
+      display: flex;
+      right: 40px;
+      bottom: 40px;
+      z-index: 999;
+    }
+
+    .links a {
+      color: #fff
+    }
+
+    .links a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title cardo-bold ">RUBENLUZ</h1>
+  <div class="links">
+    <a href="https://instagram.com/rubenluz" target="_blank">INSTAGRAM</a>
+    <a href="https://www.youtube.com/@rubenluz7154" target="_blank">YOUTUBE</a>
+    <a href="mailto:ruben@rubenluz.com">E-MAIL</a>
+    <a href="https://rubenmarcus.medium.com" target="_blank">BLOG</a>
+  </div>
+  <div class="overlay"></div>
+
+
+
+
+  <script>
+    function setBackgroundImage() {
+      let randomImageUrl;
+
+      if (window.innerWidth <= 769) {
+        // Mobile: Randomly select one of 7.jpg, 6.jpg, or 4.jpg
+        const mobileImages = ['7.jpg', '6.jpg', '4.jpg'];
+        randomImageUrl = mobileImages[Math.floor(Math.random() * mobileImages.length)];
+      } else {
+        // Non-mobile: Randomly select from 1.jpg to 13.jpg
+        const totalImages = 13;
+        const randomImageNumber = Math.floor(Math.random() * totalImages) + 1; // Random number between 1 and 13
+        randomImageUrl = `${randomImageNumber}.jpg`;
+      }
+
+      document.body.style.backgroundImage = `url('${randomImageUrl}')`;
+    }
+
+    // Run the function on page load
+    window.addEventListener('load', setBackgroundImage);
+
+    // Optionally, run the function on window resize
+    window.addEventListener('resize', setBackgroundImage);
+  </script>
+
+</body>
+
+</html>
