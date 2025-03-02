@@ -90,14 +90,14 @@
       let randomImageUrl;
 
       if (window.innerWidth <= 769) {
-        // Mobile: Randomly select one of 7.jpg, 6.jpg, or 4.jpg
-        const mobileImages = ['7.jpg', '6.jpg', '4.jpg'];
+        // Mobile: Randomly select one of 7.JPG, 6.JPG, or 4.JPG
+        const mobileImages = ['7.JPG', '6.JPG', '4.JPG'];
         randomImageUrl = mobileImages[Math.floor(Math.random() * mobileImages.length)];
       } else {
-        // Non-mobile: Randomly select from 1.jpg to 13.jpg
+        // Non-mobile: Randomly select from 1.JPG to 13.JPG
         const totalImages = 13;
         const randomImageNumber = Math.floor(Math.random() * totalImages) + 1; // Random number between 1 and 13
-        randomImageUrl = `${randomImageNumber}.jpg`;
+        randomImageUrl = `${randomImageNumber}.JPG`;
       }
 
       document.body.style.backgroundImage = `url('${randomImageUrl}')`;
